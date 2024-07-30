@@ -1,11 +1,12 @@
-import "./App.css";
+import Body from "./components/Body";
 
 function App() {
   return (
     <div className="App">
-      <header className="text-3xl text-yellow-700">hello Guys</header>
+      <Body />
     </div>
   );
 }
+
 
 export default App;

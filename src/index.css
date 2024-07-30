@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input::placeholder {
+  padding-left: 8px; /* Adjust the padding as needed */
+  /* font-size: 18px; */
+  font-weight: 400;
+}
+
+.placeholder-px-2::placeholder {
+  padding-left: 0.5rem; /* Tailwind's spacing scale equivalent to 8px */
+}
