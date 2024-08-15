@@ -7,12 +7,12 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { NETFLIX_LOG_BG_IMG } from "../utils/constants";
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [isSignedIn, setisSignedin] = useState(true);
@@ -50,8 +50,6 @@ const Login = () => {
               dispatch(
                 addUser({ uid: uid, email: email, displayName: displayName })
               );
-
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -75,8 +73,8 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
+          //console.log(user);
+
           // ...
         })
         .catch((error) => {
@@ -92,7 +90,7 @@ const Login = () => {
       <div className="relative">
         <img
           className="w-full h-screen object-cover "
-          src="https://macmagazine.com.br/wp-content/uploads/2021/07/22-netflix-1920x1024.jpg"
+          src={NETFLIX_LOG_BG_IMG}
           alt="netflixBg"
         />
         {/* an overlay div to make bg-img blackish */}
