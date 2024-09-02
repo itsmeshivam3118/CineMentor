@@ -1,5 +1,4 @@
-Netflix Clone with GPT-4 Movie Recommendations
-A comprehensive Netflix clone built with React for the front end and Firebase for the back end, featuring full authentication and all standard Netflix functionalities. Additionally, it integrates ChatGPT API to provide intelligent movie recommendations.
+A comprehensive Website built with React for the front end and Firebase for the back end, featuring full authentication and all standard functionalities. Additionally, it integrates ChatGPT API to provide intelligent movie recommendations.
 
 Features:
 
