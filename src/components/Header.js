@@ -4,7 +4,8 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
-import { NETFLIX_LOGO, USER_LOGO } from "../utils/constants";
+import { USER_LOGO } from "../utils/constants";
+// import { NETFLIX_LOGO, USER_LOGO } from "../utils/constants";
 
 function Header() {
   const dispatch = useDispatch();
@@ -35,8 +36,9 @@ function Header() {
     });
   }, []);
   return (
-    <div className="flex justify-between absolute w-screen px-28 py-8 bg-gradient-to-b from-black z-20 items-center">
-      <img className="w-40" src={NETFLIX_LOGO} alt="netflixLogo"></img>
+    <div className="flex justify-between absolute w-screen px-28 py-8 bg-gradient-to-b from-black z-20 items-center ">
+      <h1 className="text-4xl text-white font-bold ">CineMentor</h1>
+      {/* <img className="w-40" src={NETFLIX_LOGO} alt="netflixLogo"></img> */}
       {user && (
         <div className=" flex justify-end items-center">
           <img

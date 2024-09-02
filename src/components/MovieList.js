@@ -40,9 +40,10 @@ const MovieList = ({ title, movies }) => {
       });
     }
   };
+  //console.log(movies);
 
   return (
-    <div className="relative px-6 ">
+    <div className="relative px-6  ">
       <h1 className="text-3xl py-2 pt-8">{title}</h1>
       <div
         className="flex overflow-x-scroll scrollbar-hide"
@@ -51,7 +52,11 @@ const MovieList = ({ title, movies }) => {
       >
         <div className="flex">
           {movies?.map((movie) => (
-            <MovieCard key={movie.id} imgPath={movie.poster_path} />
+            <MovieCard
+              key={movie.id}
+              movie_id={movie.id}
+              imgPath={movie.poster_path}
+            />
           ))}
         </div>
       </div>
