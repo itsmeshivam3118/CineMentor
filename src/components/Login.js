@@ -85,22 +85,17 @@ const Login = () => {
     }
   };
   return (
-    <div className="relative h-screen">
+    <div className="relative h-screen bg-gray-950">
       <Header />
       <div className="relative">
-        <img
-          className="w-full h-screen object-cover "
-          src={NETFLIX_LOG_BG_IMG}
-          alt="netflixBg"
-        />
         {/* an overlay div to make bg-img blackish */}
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-gray-950 bg-opacity-50"></div>
       </div>
       <form
         onClick={(e) => {
           e.preventDefault();
         }}
-        className="bg-black absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col w-4/12 p-12 bg-opacity-70 text-white rounded"
+        className=" bg-gray-950 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col w-4/12 p-12 bg-opacity-70 text-white rounded"
       >
         <h1 className="text-3xl my-3 font-bold">
           {isSignedIn ? "Sign in" : "Sign up"}
@@ -132,13 +127,13 @@ const Login = () => {
         <p className="text-red-600 text-lg m-2">{errorMsg}</p>
 
         <button
-          className="py-2 m-2 bg-netflixRed font-bold rounded"
+          className="py-2 m-2 bg-orange-700 font-bold rounded"
           onClick={handleButton}
         >
           {isSignedIn ? "Sign in" : "Get Started!"}
         </button>
         <p className="py-2 m-2 cursor-pointer" onClick={toggleSigninFrom}>
-          New to Netflix? Sign up now.
+          Dont have an account? Sign up now.
         </p>
       </form>
     </div>

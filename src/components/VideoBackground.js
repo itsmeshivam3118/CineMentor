@@ -4,11 +4,12 @@ import { useSelector } from "react-redux";
 import useGetMovieTrailer from "../hooks/useGetMovieTrailer";
 
 const VideoBackground = ({ movie_id }) => {
-  const trailerVideo = useSelector((store) => store.movies?.trailerVideo);
   useGetMovieTrailer(movie_id);
+  const trailerVideo = useSelector((store) => store.movies?.trailerVideo);
+
   return (
     <div>
-      <div>
+      <div className="">
         <iframe
           className="relative w-screen aspect-video "
           src={

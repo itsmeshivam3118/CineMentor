@@ -5,6 +5,7 @@ import SecondaryContainer from "./SecondaryContainer";
 import usePopularMovies from "../hooks/usePopularMovies";
 import useTopRatedMovies from "../hooks/useTopRatedMovies";
 import useUpcomingMovies from "../hooks/useUpcomingMovies";
+import Footer from "./Footer";
 
 // import { useNavigate } from "react-router-dom";
 
@@ -17,9 +18,9 @@ const Browse = () => {
   return (
     <div>
       <Header />
-
       <MainContainer />
       <SecondaryContainer />
+      <Footer />
     </div>
   );
 };
