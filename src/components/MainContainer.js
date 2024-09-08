@@ -8,10 +8,15 @@ const MainContainer = () => {
   if (!movies) return;
   const mainMovie = movies[0];
   //console.log(mainMovie);
-  const { title, overview, id } = mainMovie;
+  const { title, overview, id, runtime, release_date } = mainMovie;
   return (
     <div className="w-screen">
-      <VideoDesc title={title} overview={overview} />
+      <VideoDesc
+        title={title}
+        overview={overview}
+        runtime={runtime}
+        release_date={release_date}
+      />
       <VideoBackground movie_id={id} />
     </div>
   );

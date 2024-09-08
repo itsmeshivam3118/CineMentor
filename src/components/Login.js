@@ -1,16 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Header from "./Header";
 import { validateData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 
 import { useDispatch } from "react-redux";
-import { addUser } from "../utils/userSlice";
-import { NETFLIX_LOG_BG_IMG } from "../utils/constants";
+import { addUser, removeUser } from "../utils/userSlice";
+
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -84,6 +86,22 @@ const Login = () => {
         });
     }
   };
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in
+        const { uid, email, displayName } = user;
+        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
+        navigate("/browse");
+      } else {
+        // User is signed out
+        dispatch(removeUser());
+        navigate("/");
+      }
+    });
+  }, []);
   return (
     <div className="relative h-screen bg-gray-950">
       <Header />
