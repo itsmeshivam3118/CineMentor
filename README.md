@@ -1,10 +1,8 @@
-A comprehensive Website built with React for the front end and Firebase for the back end, featuring full authentication and all standard functionalities. Additionally, it integrates ChatGPT API to provide intelligent movie recommendations.
+A comprehensive Website built with ReactJs, featuring full user authentication and all standard functionalities.
 
 Features:
-
-User Authentication (Sign up, Sign in, Password Reset)
+User Authentication (Sign up, Sign in)
 Browse, search, and stream movies and TV shows
 Personalized watch lists and recommendations
-ChatGPT-powered movie recommendation system
 Responsive UI with React
-Real-time database and hosting with Firebase
+User authentication with Firebase
